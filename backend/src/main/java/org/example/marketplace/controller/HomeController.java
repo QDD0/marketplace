@@ -21,10 +21,6 @@ public class HomeController {
 
     @GetMapping()
     public List<Item> itemList() {
-        List<Item> items = itemService.findAll();
-
-        System.out.println("Количество товаров: " + items.size());
-
         return itemService.findAll();
     }
 }
