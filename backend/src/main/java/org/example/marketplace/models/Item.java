@@ -1,5 +1,6 @@
 package org.example.marketplace.models;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.*;
 import lombok.Data;
 import org.hibernate.annotations.CreationTimestamp;
@@ -42,16 +43,20 @@ public class Item {
     @CreationTimestamp
     private LocalDateTime dateCreate;
 
+    @JsonIgnore
     @OneToMany(mappedBy = "item")
     private List<OrderItem> orderItems;
 
+    @JsonIgnore
     @OneToMany(mappedBy = "item")
     private List<Review> reviews;
 
+    @JsonIgnore
     @OneToMany(mappedBy = "item")
     private List<PhotoItem> photoItems;
 
     @ManyToOne
     @JoinColumn(name = "id_category")
+    @JsonIgnore
     private Category category;
 }

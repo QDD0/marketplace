@@ -1,12 +1,16 @@
+
 package org.example.marketplace.models;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.*;
-import lombok.Data;
+import lombok.Getter;
+import lombok.Setter;
 
 import java.util.List;
 
 @Entity
-@Data
+@Getter
+@Setter
 @Table(name = "category")
 public class Category {
 
@@ -21,10 +25,12 @@ public class Category {
     @Column(name = "description_category")
     private String descriptionCategory;
 
+    @JsonIgnore
     @ManyToOne
     @JoinColumn(name = "parent_category_id")
     private Category parentCategory;
 
+    @JsonIgnore
     @OneToMany(mappedBy = "parentCategory")
     private List<Category> subCategories;
 }

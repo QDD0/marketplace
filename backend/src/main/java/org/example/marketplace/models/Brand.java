@@ -1,12 +1,16 @@
+
 package org.example.marketplace.models;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.*;
-import lombok.Data;
+import lombok.Getter;
+import lombok.Setter;
 
 import java.util.List;
 
 @Entity
-@Data
+@Getter
+@Setter
 @Table(name = "brand")
 public class Brand {
     @Id
@@ -16,6 +20,7 @@ public class Brand {
     @Column(name = "name_brand")
     private String nameBrand;
 
+    @JsonIgnore
     @OneToMany(mappedBy = "brand")
     private List<Item> items;
 }
