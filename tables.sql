@@ -1,15 +1,3 @@
--- 1. Роли пользователей
-CREATE TABLE user_role
-(
-    id_role   SERIAL PRIMARY KEY,
-    name_role VARCHAR(30) UNIQUE NOT NULL
-        CHECK (name_role IN ('user', 'admin'))
-);
-
-INSERT INTO user_role (name_role)
-VALUES ('user'),
-       ('admin');
-
 -- 2. Пользователи
 CREATE TABLE client
 (
@@ -21,8 +9,7 @@ CREATE TABLE client
     password    VARCHAR(255)        NOT NULL,
     number      VARCHAR(20),
     date_create TIMESTAMP           NOT NULL DEFAULT CURRENT_TIMESTAMP,
-    id_role     INTEGER             NOT NULL
-        REFERENCES user_role (id_role) ON DELETE RESTRICT,
+    role        VARCHAR(30),
     avatar      TEXT
 );
 
