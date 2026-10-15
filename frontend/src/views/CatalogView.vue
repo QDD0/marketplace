@@ -114,7 +114,22 @@ onMounted(async () => {
       </ul>
     </nav>
   </header>
+
   <main class="catalog-page">
+    <div class="promo-video-wrap">
+      <video
+          class="promo-video"
+          src="https://images.samsung.com/is/content/samsung/assets/us/offer/samsung-week/20261010/n26_sw_2h_f01_ft03_scenariokv_01_work_pc_1440x500.mp4"
+          autoplay muted playsinline loop preload="auto"
+      ></video>
+
+      <div class="promo-overlay">
+        <h2 class="promo-title">Samsung Week</h2>
+        <p class="promo-subtitle">Скидки до 40% на технику</p>
+        <router-link to="/catalog" class="promo-button">Смотреть</router-link>
+      </div>
+    </div>
+
     <section>
       <p v-if="loading" class="catalog-status">Загрузка...</p>
 
@@ -308,5 +323,72 @@ onMounted(async () => {
   background: #d7d7d7;
   color: #666;
   cursor: not-allowed;
+}
+
+.promo-video-wrap {
+  position: relative;
+  width: 100%;
+  margin-bottom: 32px;
+  border-radius: 22px;
+  overflow: hidden;
+  background: #000;
+  box-shadow: 0 14px 30px rgb(17 17 17 / 8%);
+  line-height: 0;
+}
+
+.promo-video {
+  display: block;
+  width: 100%;
+  height: auto;
+  aspect-ratio: 1440 / 500;
+  object-fit: cover;
+}
+
+.promo-overlay {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  gap: 12px;
+  padding: 0 60px;
+  line-height: normal;
+  color: #fff;
+  background: linear-gradient(
+      90deg,
+      rgba(0, 0, 0, 0.55) 0%,
+      rgba(0, 0, 0, 0.15) 50%,
+      rgba(0, 0, 0, 0) 100%
+  );
+}
+
+.promo-title {
+  margin: 0;
+  font-size: 2.4rem;
+  font-weight: 800;
+  letter-spacing: -0.03em;
+}
+
+.promo-subtitle {
+  margin: 0;
+  font-size: 1.1rem;
+  opacity: 0.9;
+}
+
+.promo-button {
+  margin-top: 8px;
+  padding: 12px 24px;
+  background: #fff;
+  color: #111;
+  border-radius: 999px;
+  font-weight: 700;
+  text-decoration: none;
+  transition: transform 0.2s ease, background 0.2s ease;
+}
+
+.promo-button:hover {
+  background: #f0f0f0;
+  transform: translateY(-1px);
 }
 </style>
