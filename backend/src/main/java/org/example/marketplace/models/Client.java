@@ -1,5 +1,6 @@
 package org.example.marketplace.models;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.*;
 import lombok.Data;
 import org.example.marketplace.enums.UserRole;
@@ -46,11 +47,14 @@ public class Client {
     private UserRole role;
 
     @OneToMany(mappedBy = "client")
+    @JsonIgnore
     private List<Review> reviews;
 
     @OneToMany(mappedBy = "client")
+    @JsonIgnore
     private List<DeliveryAddress> deliveryAddresses;
 
     @OneToMany(mappedBy = "client")
+    @JsonIgnore
     private List<CustomerOrder> customerOrders;
 }

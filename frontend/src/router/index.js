@@ -3,6 +3,7 @@ import HomeView from '@/views/HomeView.vue'
 import AccountView from "@/views/AccountView.vue";
 import AuthVeiw from "@/views/AuthVeiw.vue";
 import AuthRegView from "@/views/AuthRegView.vue";
+import PersonalView from "@/views/PersonalView.vue";
 
 const router = createRouter({
     history: createWebHistory(),
@@ -10,7 +11,8 @@ const router = createRouter({
         {path: '/', component: HomeView},
         {path: '/profile', component: AccountView},
         {path: '/auth', component: AuthVeiw},
-        {path: '/auth/reg', component: AuthRegView}
+        {path: '/auth/reg', component: AuthRegView},
+        {path: '/profile/personal', component: PersonalView}
     ]
 })
 

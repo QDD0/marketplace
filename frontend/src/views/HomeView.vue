@@ -66,13 +66,13 @@ onMounted(async () => {
 
       <div class="nav-center">
         <div class="catalog-menu">
-          <a href="#" class="catalog">
+          <router-link to="/catalog" href="#" class="catalog">
             <img
                 src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABkAAAAZCAYAAADE6YVjAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAXklEQVR4nO2UMQrAMAhF3xmaKzc5c50sgS4OacShhNQHTj74DirsSAME0EEJUAOuoTeOlyEKcAVcQ59ghgbcDCFDkGf1vCtcnK6hOg7sDLjf0/Kt/PNONEMG5FtZmBsi6Ig1lLiwgQAAAABJRU5ErkJggg=="
                 alt="Иконка каталога"
             />
             Каталог
-          </a>
+          </router-link>
           <div class="catalog-dropdown" id="catalog-menu">
             <section class="catalog-column">
               <h2>Электроника</h2>

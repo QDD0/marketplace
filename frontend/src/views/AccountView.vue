@@ -1,5 +1,5 @@
 <script setup>
-import { ref, onMounted, watch } from 'vue'
+import {ref, onMounted, watch} from 'vue'
 
 const isDarkTheme = ref(localStorage.getItem('theme') === 'dark')
 
@@ -58,10 +58,10 @@ watch(isDarkTheme, (value) => applyTheme(value))
             <i class="fa-solid fa-gear" aria-hidden="true"></i>
             Настройки
           </a>
-          <a href="">
+          <router-link to="/profile/personal">
             <i class="fa-solid fa-users-gear" aria-hidden="true"></i>
             Управление персоналом
-          </a>
+          </router-link>
           <a href="">
             <i class="fa-solid fa-cubes" aria-hidden="true"></i>
             Управление товарами
