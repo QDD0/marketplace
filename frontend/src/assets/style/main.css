@@ -218,15 +218,6 @@ a i {
     -webkit-text-stroke: 1px #000;
 }
 
-@media (max-width: 760px) {
-    .catalog-dropdown {
-        grid-template-columns: repeat(2, minmax(130px, 1fr));
-        gap: 24px 16px;
-        padding: 22px;
-    }
-}
-
-
 .news-content {
     display: flex;
     justify-content: center;

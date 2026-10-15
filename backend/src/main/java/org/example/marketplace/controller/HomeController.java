@@ -23,4 +23,9 @@ public class HomeController {
     public List<Item> itemList() {
         return itemService.findAll();
     }
+
+    @GetMapping("/catalog")
+    public List<Item> catalogList() {
+        return itemService.findAll();
+    }
 }

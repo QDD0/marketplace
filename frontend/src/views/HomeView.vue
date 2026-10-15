@@ -1,5 +1,5 @@
 <script setup>
-import { onMounted, ref } from 'vue'
+import {onMounted, ref} from 'vue'
 
 const items = ref([])
 const loading = ref(true)
@@ -66,13 +66,13 @@ onMounted(async () => {
 
       <div class="nav-center">
         <div class="catalog-menu">
-          <a href="#" class="catalog">
+          <router-link to="/catalog" href="#" class="catalog">
             <img
                 src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABkAAAAZCAYAAADE6YVjAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAXklEQVR4nO2UMQrAMAhF3xmaKzc5c50sgS4OacShhNQHTj74DirsSAME0EEJUAOuoTeOlyEKcAVcQ59ghgbcDCFDkGf1vCtcnK6hOg7sDLjf0/Kt/PNONEMG5FtZmBsi6Ig1lLiwgQAAAABJRU5ErkJggg=="
                 alt="Иконка каталога"
             />
             Каталог
-          </a>
+          </router-link>
           <div class="catalog-dropdown" id="catalog-menu">
             <section class="catalog-column">
               <h2>Электроника</h2>
@@ -106,7 +106,7 @@ onMounted(async () => {
         </div>
 
         <form action="/search" method="get" class="find-item">
-          <input type="search" placeholder="поиск" aria-label="Поиск" />
+          <input type="search" placeholder="поиск" aria-label="Поиск"/>
           <button type="submit" aria-label="Найти">
             <i class="fa-brands fa-sistrix" aria-hidden="true"></i>
           </button>
@@ -115,10 +115,10 @@ onMounted(async () => {
 
       <ul class="nav-right">
         <li>
-          <a href="#" class="prof-btn" aria-label="Профиль" title="Профиль">
+          <router-link to="/profile" class="prof-btn" aria-label="Профиль" title="Профиль">
             <i class="fa-regular fa-user icon-outline"></i>
             <i class="fa-solid fa-user icon-filled"></i>
-          </a>
+          </router-link>
         </li>
         <li>
           <a
@@ -136,7 +136,9 @@ onMounted(async () => {
             <i class="fa-solid fa-cart-shopping" aria-hidden="true"></i>
           </a>
         </li>
-        <li><a href="#" class="login">войти</a></li>
+        <li>
+          <router-link to="/auth" class="login">войти</router-link>
+        </li>
       </ul>
     </nav>
   </header>
@@ -272,9 +274,11 @@ onMounted(async () => {
           </p>
 
           <p class="stock">
-            {{ item.countItem > 0
-              ? `В наличии: ${item.countItem} шт.`
-              : 'Нет в наличии' }}
+            {{
+              item.countItem > 0
+                  ? `В наличии: ${item.countItem} шт.`
+                  : 'Нет в наличии'
+            }}
           </p>
 
           <button
